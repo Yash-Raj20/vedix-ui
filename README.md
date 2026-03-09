@@ -22,7 +22,7 @@ Explore all components with examples and usage guides.
 
 ![Menubar](https://raw.githubusercontent.com/Yash-Raj20/vedix-ui/main/public/menubar.png)
 
-![Prompt Input](https://raw.githubusercontent.com/Yash-Raj20/vedix-ui/main/public/propmt.png)
+![Prompt Input](https://raw.githubusercontent.com/Yash-Raj20/vedix-ui/main/public/prompt.png)
 
 ---
 
