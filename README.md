@@ -1,13 +1,32 @@
 # Vedix UI
 
 **Vedix UI** is a modern, developer-first UI component system for React applications.
+
 It provides a powerful CLI that allows developers to quickly add production-ready components into their projects while maintaining full control over the source code.
 
 Unlike traditional UI frameworks, Vedix UI copies the component source directly into your project so you can customize, extend, and maintain your UI without limitations.
 
 ---
 
-## Features
+## 🌐 Live Documentation
+
+Explore all components with examples and usage guides.
+
+👉 https://vedix-ui.vercel.app
+
+---
+
+## ✨ Preview
+
+![Button](https://raw.githubusercontent.com/Yash-Raj20/vedix-ui/main/public/button.png)
+
+![Menubar](https://raw.githubusercontent.com/Yash-Raj20/vedix-ui/main/public/menubar.png)
+
+![Prompt Input](https://raw.githubusercontent.com/Yash-Raj20/vedix-ui/main/public/propmt.png)
+
+---
+
+## 🚀 Features
 
 * **Developer-First CLI** – Add components instantly using a simple command.
 * **Copy-Paste Architecture** – Components are added directly into your project.
@@ -19,7 +38,7 @@ Unlike traditional UI frameworks, Vedix UI copies the component source directly 
 
 ---
 
-## Installation
+## 📦 Installation
 
 Install the Vedix UI package in your project:
 
@@ -35,7 +54,7 @@ npx @vedix/ui init
 
 ---
 
-## Quick Start
+## ⚡ Quick Start
 
 ### 1. Initialize Vedix UI
 
@@ -82,7 +101,7 @@ The CLI will automatically:
 
 ---
 
-## Example Usage
+## 🧩 Example Usage
 
 After adding a component, you can use it like this:
 
@@ -98,21 +117,9 @@ export default function Page() {
 }
 ```
 
-## Preview
-
-![Button](https://raw.githubusercontent.com/Yash-Raj20/vedix-ui/main/public/button.png)
-
-## Components
-
-![Menubar](https://raw.githubusercontent.com/Yash-Raj20/vedix-ui/main/public/menubar.png)
-
-## Dashboard Example
-
-![Propmt Input](https://raw.githubusercontent.com/Yash-Raj20/vedix-ui/main/public/propmt.png)
-
 ---
 
-## Available Components
+## 📚 Available Components
 
 Vedix UI includes a rich collection of modern UI components.
 
@@ -167,7 +174,7 @@ Vedix UI includes a rich collection of modern UI components.
 
 ---
 
-## Technology Stack
+## 🛠 Technology Stack
 
 Vedix UI is built using modern frontend technologies:
 
@@ -180,7 +187,7 @@ Vedix UI is built using modern frontend technologies:
 
 ---
 
-## Use Cases
+## 🎯 Use Cases
 
 ### Build Your Own Design System
 
@@ -196,7 +203,7 @@ All components are production-ready and designed with accessibility and performa
 
 ---
 
-## Project Philosophy
+## 💡 Project Philosophy
 
 Vedix UI follows a simple principle:
 
@@ -206,18 +213,18 @@ Instead of locking you into a framework, Vedix UI gives you full control of the 
 
 ---
 
-## License
-
-MIT License.
-
----
-
-## Future Roadmap
+## 🗺 Roadmap
 
 Upcoming improvements for Vedix UI:
 
 * Component playground
-* Official documentation website
 * Theme generator
 * Figma design kit
 * Additional components
+* Improved CLI tooling
+
+---
+
+## 📄 License
+
+MIT License
