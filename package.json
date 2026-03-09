@@ -1,6 +1,6 @@
 {
     "name": "@vedix/ui",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "module",
     "description": "A Vedix UI component library CLI",
     "main": "./dist/index.js",
