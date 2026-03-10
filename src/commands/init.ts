@@ -34,14 +34,27 @@ export const init = new Command()
             }
 
             spinner.stop()
+            console.log(chalk.blue("\nDetecting project structure..."))
 
-            // 2. Interactive Prompts
+            // 2. Smart Path Detection
+            let defaultUiPath = "src/components/ui"
+            if (fs.existsSync(path.join(cwd, "src/components"))) {
+                defaultUiPath = "src/components/ui"
+            } else if (fs.existsSync(path.join(cwd, "components"))) {
+                defaultUiPath = "components/ui"
+            } else if (fs.existsSync(path.join(cwd, "src"))) {
+                defaultUiPath = "src/components/ui"
+            } else {
+                defaultUiPath = "components/ui"
+            }
+
+            // 3. Interactive Prompts
             const answers = await inquirer.prompt([
                 {
                     type: "input",
                     name: "uiPath",
                     message: "Where would you like to store your UI components?",
-                    default: "src/components/ui",
+                    default: defaultUiPath,
                 },
             ])
 
@@ -82,48 +95,67 @@ export const init = new Command()
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* ── Premium Navy-Gold Light Theme ── */
+    --background: 205 20% 98%;
+    --foreground: 205 40% 12%;
+    
+    --card: 205 15% 99%;
+    --card-foreground: 205 40% 12%;
+    
+    --popover: 205 15% 99%;
+    --popover-foreground: 205 40% 12%;
+    
+    --primary: 205 40% 18%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 205 10% 93%;
+    --secondary-foreground: 205 40% 15%;
+    
+    --muted: 205 10% 94%;
+    --muted-foreground: 205 15% 45%;
+    
+    --accent: 205 10% 93%;
+    --accent-foreground: 205 40% 15%;
+    
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 205 20% 88%;
+    --input: 205 20% 88%;
+    --ring: 205 40% 15%;
+    
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* ── Premium Navy-Gold Dark Theme ── */
+    --background: 205 34% 6%;
+    --foreground: 0 0% 94%;
+    
+    --card: 205 30% 9%;
+    --card-foreground: 0 0% 94%;
+    
+    --popover: 205 30% 9%;
+    --popover-foreground: 0 0% 94%;
+    
+    --primary: 0 0% 91%;
+    --primary-foreground: 240 6% 10%;
+    
+    --secondary: 205 20% 16%;
+    --secondary-foreground: 0 0% 90%;
+    
+    --muted: 205 20% 14%;
+    --muted-foreground: 240 4% 60%;
+    
+    --accent: 205 20% 16%;
+    --accent-foreground: 0 0% 90%;
+    
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 205 20% 18%;
+    --input: 205 20% 18%;
+    --ring: 0 0% 91%;
   }
 }
 
@@ -132,7 +164,29 @@ export const init = new Command()
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* ── Premium Vedix Utilities ── */
+@layer utilities {
+  .vedix-gradient-bg {
+    background: linear-gradient(135deg, #25343F 0%, #A07020 40%, #C9963E 100%);
+  }
+  
+  .vedix-gradient-text {
+    background: linear-gradient(135deg, #25343F 0%, #A07020 35%, #C9963E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 20px rgba(160, 112, 32, 0.2);
+  }
+
+  .gold-border {
+    border-color: rgba(160, 112, 32, 0.3) !important;
   }
 }`
                 await fs.writeFile(cssPath, cssContent)
